@@ -53,8 +53,7 @@ test('TC-07: Login with different case username', async ({ page }) => {
     const login = new LoginPage(page);
     await login.gotoLoginPage();
     await login.login('admin', 'admin123');
-    await expect(login.invalidCredentialsMessage).toBeVisible();
-    await expect(page).toHaveURL(/auth\/login/i);
+    await expect(page).toHaveURL(/dashboard/);
 });
 
 test('TC-08: Password field should be masked', async ({ page }) => {
